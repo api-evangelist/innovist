@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: https://innovist.com/.well-known/openid-configuration
+docs: https://innovist.com/.well-known/oauth-authorization-server
+notes: >-
+  OAuth/OIDC scopes captured verbatim from the store's live discovery documents
+  (scopes_supported). These are Shopify customer-account identity scopes, plus
+  the customer-account MCP API scope that backs agent-driven commerce.
+schemes:
+- name: shopifyCustomerAccountOIDC
+  source: well-known/innovist-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://shopify.com/authentication/3960733763/oauth/authorize
+    tokenUrl: https://shopify.com/authentication/3960733763/oauth/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; issue an ID token for the customer.
+  flows:
+  - authorizationCode
+- scope: email
+  description: Access the customer's email address and email_verified claim.
+  flows:
+  - authorizationCode
+- scope: customer-account-api:full
+  description: Full access to the Shopify Customer Account API on behalf of the signed-in customer.
+  flows:
+  - authorizationCode
+- scope: customer-account-mcp-api:full
+  description: Full access to the customer-account MCP API used for agent-driven commerce.
+  flows:
+  - authorizationCode

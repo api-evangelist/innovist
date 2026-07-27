@@ -1,7 +1,17 @@
 aid: innovist
 name: Innovist
-description: 'Innovist is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  Innovist is an Accel-backed, science-backed direct-to-consumer personal care
+  house based in India, building and operating a portfolio of skincare, haircare
+  and suncare brands including Chemist At Play, Bare Anatomy and Sunscoop. It
+  sells direct to consumers through a Shopify-powered online store at
+  innovist.com, offering free delivery and category-wide discounts across skin,
+  hair and sun care. While Innovist does not publish a traditional developer
+  API program, its storefront natively implements agent-facing commerce
+  surfaces: a customer-account OpenID Connect identity layer, a published
+  llms.txt / agents.md for AI shopping assistants, and a Universal Commerce
+  Protocol (UCP) MCP endpoint that lets approved agents search the catalog,
+  build carts and complete buyer-approved checkouts.
 url: https://raw.githubusercontent.com/api-evangelist/innovist/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +19,33 @@ x-backed-by:
 - accel
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://innovist.com/cdn/shop/files/1200_628.png?v=1724222722
 tags:
 - Company
 - Consumer
+- Personal Care
+- Skincare
+- Haircare
+- Suncare
+- Direct to Consumer
+- Ecommerce
+- Shopify
+- Agentic Commerce
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,3 +55,30 @@ maintainers:
 common:
 - type: Website
   url: https://innovist.com/
+- type: Blog
+  url: https://innovist.com/blogs/all
+- type: Support
+  url: https://innovist.com/pages/contact-us
+- type: Login
+  url: https://innovist.com/account/login
+- type: TermsOfService
+  url: https://innovist.com/policies/terms-of-service
+- type: PrivacyPolicy
+  url: https://innovist.com/policies/privacy-policy
+- type: MCPServer
+  url: mcp/innovist-mcp.yml
+- type: LLMsTxt
+  url: llms/innovist-llms.txt
+- type: WellKnown
+  url: well-known/innovist-well-known.yml
+- type: Authentication
+  url: authentication/innovist-authentication.yml
+- type: OAuthScopes
+  url: scopes/innovist-scopes.yml
+- type: DomainSecurity
+  url: security/innovist-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

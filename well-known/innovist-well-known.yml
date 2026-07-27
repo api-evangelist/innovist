@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+source: https://innovist.com/.well-known/
+host: https://innovist.com
+notes: >-
+  Innovist's storefront runs on Shopify, which publishes a customer-account
+  OpenID Connect discovery surface and a Universal Commerce Protocol (UCP)
+  agent-commerce profile at the store's own domain. Documents below were
+  fetched live and saved verbatim. The UCP profile resolves to the store's
+  canonical myshopify handle (bareanatomy.myshopify.com).
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: innovist-openid-configuration.json
+  kind: openid-configuration
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: innovist-oauth-authorization-server.json
+  kind: oauth-authorization-server
+- path: /.well-known/ucp
+  status: 200
+  file: innovist-ucp.json
+  kind: universal-commerce-protocol
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/jwks.json
+  status: 404
