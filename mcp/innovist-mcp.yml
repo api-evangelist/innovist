@@ -3,14 +3,11 @@ method: searched
 status: published
 source: https://innovist.com/llms.txt
 docs: https://innovist.com/.well-known/ucp
-notes: >-
-  Innovist's Shopify storefront natively implements the Universal Commerce
-  Protocol (UCP, https://ucp.dev) and exposes a hosted MCP endpoint for
-  agent-driven commerce. Discovery is at GET /.well-known/ucp; the MCP endpoint
-  accepts POST with Content-Type application/json and supports the standard
-  MCP tools/list method for tool discovery. Checkout requires contemporaneous
-  human buyer approval; the endpoint is rate-limited per IP (back off on 429).
-  Tool names below are documented in the store's /llms.txt "Typical Agent Flow";
+notes: Innovist's Shopify storefront natively implements the Universal Commerce Protocol (UCP, https://ucp.dev)
+  and exposes a hosted MCP endpoint for agent-driven commerce. Discovery is at GET /.well-known/ucp; the
+  MCP endpoint accepts POST with Content-Type application/json and supports the standard MCP tools/list
+  method for tool discovery. Checkout requires contemporaneous human buyer approval; the endpoint is rate-limited
+  per IP (back off on 429). Tool names below are documented in the store's /llms.txt "Typical Agent Flow";
   call tools/list against the endpoint for authoritative schemas.
 server:
   name: innovist-ucp-shopping
@@ -32,3 +29,11 @@ tools:
   description: Set shipping address and fulfillment method on a checkout.
 - name: complete_checkout
   description: Finalize the purchase. Requires explicit buyer payment approval.
+deployment:
+  mode: remote
+  endpoint: https://innovist.com/api/ucp/mcp
+  verified: probed
+  probe: live
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
