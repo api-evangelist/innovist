@@ -5,7 +5,7 @@
       "source": "https://innovist.com/blogs/all.atom",
       "feed_url": "https://innovist.com/blogs/all.atom",
       "title": "",
-      "saved": 2,
+      "saved": 0,
       "method": "feed"
     },
     {
@@ -23,6 +23,6 @@
       "method": "none"
     }
   ],
-  "post_count": 2,
-  "fetched": "2026-10-10T13:15:00Z"
+  "post_count": 30,
+  "fetched": "2026-10-17T14:53:57Z"
 }
